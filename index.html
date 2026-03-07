@@ -12,16 +12,8 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/video-intro.css" />
 </head>
 <body>
-
-  <!-- ───── VIDEO INTRO LOADER ───── -->
-  <div id="vi-loader" aria-label="Indlæser" role="status">
-    <div class="vi-loader__brand">Salon Merrild</div>
-    <div class="vi-loader__bar-wrap"><div id="vi-loader-bar"></div></div>
-    <div id="vi-loader-percent">0%</div>
-  </div>
 
   <!-- ───── NAVIGATION ───── -->
   <header class="nav" id="nav">
@@ -41,98 +33,12 @@
     </div>
   </header>
 
-  <!-- ───── VIDEO INTRO HERO ───── -->
-  <section class="vi-hero" id="vi-hero" aria-label="Salon Merrild intro">
-    <div class="vi-hero__glow" aria-hidden="true"></div>
-    <div class="vi-hero__content">
-      <span class="vi-hero__label">Frisørsalon · København S</span>
-      <h1 class="vi-hero__heading">
-        <span class="vi-hero__word">Håret,</span>
-        <span class="vi-hero__word"><em>der fortæller</em></span>
-        <span class="vi-hero__word">din historie.</span>
-      </h1>
-      <p class="vi-hero__tagline">Personlig service siden 1987 · Holmbladsgade 109</p>
-    </div>
-    <div class="vi-hero__scroll-hint" aria-hidden="true">
-      <span>Scroll</span>
-      <div class="vi-hero__scroll-arrow"></div>
-    </div>
-  </section>
-
-  <!-- ───── CANVAS (fixed) ───── -->
-  <div class="vi-canvas-wrap" id="vi-canvas-wrap" aria-hidden="true">
-    <canvas id="vi-canvas"></canvas>
-  </div>
-
-  <!-- ───── DARK OVERLAY (fixed) ───── -->
-  <div id="vi-dark-overlay" aria-hidden="true"></div>
-
-  <!-- ───── MARQUEE (fixed) ───── -->
-  <div class="vi-marquee-wrap" id="vi-marquee-wrap" aria-hidden="true">
-    <div class="vi-marquee-text">
-      Klipning &nbsp;·&nbsp; Farvning &nbsp;·&nbsp; Highlights &nbsp;·&nbsp; Balayage &nbsp;·&nbsp; Permanentbølge &nbsp;·&nbsp; Opsætning &nbsp;·&nbsp; Skæg &amp; Barbering &nbsp;·&nbsp;&nbsp;&nbsp;&nbsp;
-      Klipning &nbsp;·&nbsp; Farvning &nbsp;·&nbsp; Highlights &nbsp;·&nbsp; Balayage &nbsp;·&nbsp; Permanentbølge &nbsp;·&nbsp; Opsætning &nbsp;·&nbsp; Skæg &amp; Barbering &nbsp;·&nbsp;
-    </div>
-  </div>
-
-  <!-- ───── VIDEO SCROLL CONTAINER ───── -->
-  <div id="vi-scroll-container">
-
-    <!-- 001: Personlig pleje (slide-left, align-left) -->
-    <section class="vi-section align-left"
-             data-enter="22" data-leave="40" data-animation="slide-left">
-      <div class="vi-section__inner">
-        <span class="vi-section__label">001 / Filosofi</span>
-        <h2 class="vi-section__heading">Personlig<br /><em>pleje</em><br />og omsorg</h2>
-        <p class="vi-section__body">Vi tror på, at et godt klip giver selvtillid. Hos os møder du altid det samme dedikerede team, der kender dit hår indefra og ud.</p>
-      </div>
-    </section>
-
-    <!-- 002: Dit look (slide-right, align-right) -->
-    <section class="vi-section align-right"
-             data-enter="42" data-leave="60" data-animation="slide-right">
-      <div class="vi-section__inner">
-        <span class="vi-section__label">002 / Teknik</span>
-        <h2 class="vi-section__heading">Dit look,<br /><em>din</em><br />identitet</h2>
-        <p class="vi-section__body">Fra klassisk klipning til moderne balayage — vi mestrer det hele med præcision og passion for hårets naturlige skønhed.</p>
-      </div>
-    </section>
-
-    <!-- 003: Stats (stagger-up, centered with dark overlay) -->
-    <section class="vi-section vi-section--stats"
-             data-enter="62" data-leave="78" data-animation="stagger-up">
-      <div class="vi-stats-grid">
-        <div class="vi-stat">
-          <span class="vi-stat__number" data-value="37" data-decimals="0">0</span><span class="vi-stat__suffix">år</span>
-          <span class="vi-stat__label">Erfaring</span>
-        </div>
-        <div class="vi-stat">
-          <span class="vi-stat__number" data-value="1000" data-decimals="0">0</span><span class="vi-stat__suffix">+</span>
-          <span class="vi-stat__label">Glade kunder</span>
-        </div>
-        <div class="vi-stat">
-          <span class="vi-stat__number" data-value="100" data-decimals="0">0</span><span class="vi-stat__suffix">%</span>
-          <span class="vi-stat__label">Personlig service</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- 004: CTA (fade-up, align-left, persists) -->
-    <section class="vi-section align-left"
-             data-enter="80" data-leave="96" data-animation="fade-up" data-persist="true">
-      <div class="vi-section__inner">
-        <span class="vi-section__label">003 / Book tid</span>
-        <h2 class="vi-section__heading">Klar til<br /><em>din næste</em><br />stil?</h2>
-        <p class="vi-section__body">Book nemt og hurtigt online. Vælg den tid der passer dig bedst.</p>
-        <a href="https://salonmerrild.klikbook.dk" target="_blank" rel="noopener" class="vi-cta-btn">Book din tid →</a>
-      </div>
-    </section>
-
-  </div><!-- #vi-scroll-container -->
-
   <!-- ───── HERO ───── -->
   <section class="hero" id="top">
     <div class="hero__bg">
+      <video class="hero__video" autoplay muted loop playsinline>
+        <source src="77c0c163652b09f1a796f070a326c068_1772914745_f51hfn7z.mov" type="video/mp4">
+      </video>
       <div class="hero__gradient"></div>
     </div>
     <div class="hero__content container">
@@ -383,16 +289,6 @@
     </div>
   </footer>
 
-  <!-- Lenis + GSAP for video intro -->
-  <script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
-  <script>
-    if (typeof gsap !== 'undefined') {
-      gsap.registerPlugin(ScrollTrigger);
-    }
-  </script>
-  <script src="js/video-intro.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
