@@ -895,3 +895,25 @@ h3 {
   .gallery__grid { grid-auto-rows: 160px; }
   .gallery__item figcaption { font-size: 0.7rem; }
 }
+
+/* ── HERO VIDEO BACKGROUND ── */
+.hero__video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.45;
+  z-index: 0;
+}
+
+/* Disable hero animated shapes when video is present — cleaner look */
+.hero__bg:has(.hero__video)::before {
+  opacity: 0.35;
+  animation: none;
+}
+
+/* On mobile, pause video to save bandwidth */
+@media (prefers-reduced-motion: reduce) {
+  .hero__video { display: none; }
+}
