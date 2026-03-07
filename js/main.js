@@ -4,6 +4,27 @@
 
 'use strict';
 
+/* ── HERO VIDEO: Force autoplay ── */
+(function initHeroVideo() {
+  const video = document.querySelector('.hero__video');
+  if (!video) return;
+
+  video.muted = true;
+
+  const tryPlay = () => video.play().catch(() => {});
+
+  // Try when video is ready to play
+  video.addEventListener('canplay', tryPlay, { once: true });
+
+  // Try immediately if already ready
+  if (video.readyState >= 3) tryPlay();
+
+  // Retry on first user interaction (fallback for strict browsers)
+  ['touchstart', 'pointerdown', 'click'].forEach(evt => {
+    document.addEventListener(evt, tryPlay, { once: true, passive: true });
+  });
+})();
+
 /* ── NAV: Scroll state ── */
 (function initNav() {
   const nav = document.getElementById('nav');
