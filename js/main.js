@@ -29,6 +29,7 @@
 
   const links = [
     { href: '#om-os',   label: 'Om os' },
+    { href: '#galleri', label: 'Galleri' },
     { href: '#ydelser', label: 'Ydelser' },
     { href: '#aabent',  label: 'Åbningstider' },
     { href: '#kontakt', label: 'Kontakt' },
