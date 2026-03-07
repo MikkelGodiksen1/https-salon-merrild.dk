@@ -9,13 +9,15 @@
   const video = document.querySelector('.hero__video');
   if (!video) return;
 
-  // Ensure muted (required for autoplay)
   video.muted = true;
 
   const tryPlay = () => video.play().catch(() => {});
 
-  // Try immediately
-  tryPlay();
+  // Try when video is ready to play
+  video.addEventListener('canplay', tryPlay, { once: true });
+
+  // Try immediately if already ready
+  if (video.readyState >= 3) tryPlay();
 
   // Retry on first user interaction (fallback for strict browsers)
   ['touchstart', 'pointerdown', 'click'].forEach(evt => {
